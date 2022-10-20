@@ -2,6 +2,8 @@ import React from "react"
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+
+
 let globalId= 0;
 function App() {
   const [task , setTask]= useState("")
@@ -18,10 +20,10 @@ function App() {
     setTodos(prevState=> prevState.filter(item=>item.id !== itemID))
 
   }
-  return <div>
+  return <div className="form">
         <h1>BEST TODO APP</h1>
         <form>
-        <input type="text" value={task} onChange={event=> {
+        <input className="input" type="text" value={task} onChange={event=> {
           setTask(event.target.value)
         }}/>
         <button onClick={createTodo} type="submit">Create todo</button>
